@@ -1,0 +1,112 @@
+int front = 1;
+int back = 2;
+int white = 1;
+int black = 2;
+void square_up_create(int side, int ending, int speed){
+  if(speed >= -250 && speed <= 250){
+        black_speed = 0.5*speed;
+    }
+    else{black_speed = 0.25*speed;}
+  switch(side){
+     case 1:
+     while(1){
+            if(get_create_lfcliff_amt()>cliff && get_create_rfcliff_amt()>cliff){
+                create_drive_direct(speed,speed);
+            }
+            if(get_create_rfcliff_amt()<cliff){
+                create_drive_direct(speed,stop);
+            }
+            if(get_create_lfcliff_amt()<cliff){
+                create_drive_direct(stop,speed);
+            }
+            if(get_create_lfcliff_amt()<cliff && get_create_rfcliff_amt()<cliff) {
+                create_drive_direct(stop,stop);
+                break;
+            }
+        }
+        switch(ending){
+        case 1:
+                while(1){
+                    if(get_create_lfcliff_amt()<cliff && get_create_rfcliff_amt()<cliff){
+                        create_drive_direct(black_speed,black_speed);
+                    }
+                    if(get_create_lfcliff_amt()>cliff){
+                        create_drive_direct(stop,black_speed);
+                    }
+                    if(get_create_rfcliff_amt()>cliff){
+                        create_drive_direct(black_speed,stop);
+                    }
+                    if(get_create_lfcliff_amt()>cliff && get_create_rfcliff_amt()>cliff){
+                        create_drive_direct(stop,stop);
+                        break;
+                    }
+                }
+        case 2:
+                while(1){
+                    if(get_create_lfcliff_amt()<cliff && get_create_rfcliff_amt()<cliff){
+                        create_drive_direct(-1*black_speed,-1*black_speed);
+                    }
+                    if(get_create_lfcliff_amt()>cliff){
+                        create_drive_direct(stop,-1*black_speed);
+                    }
+                    if(get_create_rfcliff_amt()>cliff){
+                        create_drive_direct(-1*black_speed,stop);
+                    }
+                    if(get_create_lfcliff_amt()>cliff && get_create_rfcliff_amt()>cliff){
+                        create_drive_direct(stop,stop);
+                        break;
+                    }
+                }
+            }
+    case 2:
+    while(1){
+            if(get_create_lcliff_amt()>cliff && get_create_rcliff_amt()>cliff){
+                create_drive_direct(speed,speed);
+            }
+            if(get_create_rcliff_amt()<cliff){
+                create_drive_direct(speed,stop);
+            }
+            if(get_create_lcliff_amt()<cliff){
+                create_drive_direct(stop,speed);
+            }
+            if(get_create_lcliff_amt()<cliff && get_create_rcliff_amt()<cliff) {
+                create_drive_direct(stop,stop);
+                break;
+            }
+        }
+    switch(ending){
+        case 1:
+                while(1){
+                    if(get_create_lcliff_amt()<cliff && get_create_rcliff_amt()<cliff){
+                        create_drive_direct(black_speed,black_speed);
+                    }
+                    if(get_create_lcliff_amt()>cliff){
+                        create_drive_direct(stop,black_speed);
+                    }
+                    if(get_create_rcliff_amt()>cliff){
+                        create_drive_direct(black_speed,stop);
+                    }
+                    if(get_create_lcliff_amt()>cliff && get_create_rcliff_amt()>cliff){
+                        create_drive_direct(stop,stop);
+                        break;
+                    }
+                }
+        case 2:
+                while(1){
+                    if(get_create_lcliff_amt()<cliff && get_create_rcliff_amt()<cliff){
+                        create_drive_direct(-1*black_speed,-1*black_speed);
+                    }
+                    if(get_create_lcliff_amt()>cliff){
+                        create_drive_direct(stop,-1*black_speed);
+                    }
+                    if(get_create_rcliff_amt()>cliff){
+                        create_drive_direct(-1*black_speed,stop);
+                    }
+                    if(get_create_lcliff_amt()>cliff && get_create_rcliff_amt()>cliff){
+                        create_drive_direct(stop,stop);
+                        break;
+                    }
+                }
+            }
+        }
+    }
